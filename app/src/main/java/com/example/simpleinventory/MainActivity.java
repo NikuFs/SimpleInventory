@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(username.getText().toString().equals("admin") && password.getText().toString().equals("admin")){
                     //correct
-                    Intent in = new Intent(getApplicationContext(), StockActivity.class);
+                    Intent in = new Intent(getApplicationContext(), HomeActivity.class);
                     startActivity(in);
                     Toast.makeText(MainActivity.this,"LOGIN SUCCESSFUL",Toast.LENGTH_SHORT).show();
                 }else

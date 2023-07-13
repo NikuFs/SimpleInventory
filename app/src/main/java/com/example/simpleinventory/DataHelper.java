@@ -9,18 +9,15 @@ public class DataHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "inventory_management.db";
     private static final int DATABASE_VERSION = 1;
 
-    private static final String TABLE_BARANG = "barang";
-    private static final String TABLE_ADMIN = "admin";
-
-
     public DataHelper(Context context){
+
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db){
         // TODO Auto-generated method stub
-        String sql = "create table "+TABLE_BARANG+"(idBarang primary key null, namabarang text null, stock text null, harga text null)";
+        String sql = "create table barang(idBarang primary key null, namabarang text null, stock text null, harga text null);";
         Log.d("Data", "onCreate: " + sql);
         db.execSQL(sql);
 
@@ -28,6 +25,9 @@ public class DataHelper extends SQLiteOpenHelper {
         db.execSQL(sql);
 
         sql = "insert into barang (idBarang, namabarang, stock, harga) values (2, 'roko sampurna', '11','10000');";
+        db.execSQL(sql);
+
+        sql = "insert into barang (idBarang, namabarang, stock, harga) values (3, 'razer viper mini', '11','11000');";
         db.execSQL(sql);
     }
 
